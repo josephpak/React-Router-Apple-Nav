@@ -75,19 +75,6 @@ const SubNavContent = styled.div`
 `
 
 class Nav extends React.Component {
-    constructor() {
-        super()
-        this.state = {
-            selected: ""
-        }
-    }
-
-    changeSelected = (e, path) => {
-        e.preventDefault()
-        this.setState({
-            selected: path
-        })
-    }
     
     render() {
         return (
@@ -98,7 +85,6 @@ class Nav extends React.Component {
                         <TopNav 
                         key={tab.path}
                         tab={tab}
-                        changeSelected={this.changeSelected}
                         />
                     ))}
                     <a>Support</a>
