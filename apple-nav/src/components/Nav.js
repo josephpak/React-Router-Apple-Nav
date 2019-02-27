@@ -60,7 +60,7 @@ const SubNavContent = styled.div`
     background-color: rgba(45,45,45,0.98);;
 
     img {
-        max-height: 42px;
+        max-height: 35px;
     }
 
     a {
