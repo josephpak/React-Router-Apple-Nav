@@ -60,7 +60,7 @@ const SubNavContent = styled.div`
     background-color: rgba(45,45,45,0.98);;
 
     img {
-        opacity: 1;
+        max-height: 42px;
     }
 
     a {
@@ -77,6 +77,16 @@ const SubNavContent = styled.div`
 class Nav extends React.Component {
     constructor() {
         super()
+        this.state = {
+            selected: ""
+        }
+    }
+
+    changeSelected = (e, path) => {
+        e.preventDefault()
+        this.setState({
+            selected: path
+        })
     }
     
     render() {
@@ -97,6 +107,21 @@ class Nav extends React.Component {
                 </TopNavContent>
                 <SubNavContent>
                     <Route path="/mac" render={props => (
+                        <SubNav {...props} navdata={this.props.navdata} />
+                    )}></Route>
+                    <Route path="/iphone" render={props => (
+                        <SubNav {...props} navdata={this.props.navdata} />
+                    )}></Route>
+                    <Route path="/ipad" render={props => (
+                        <SubNav {...props} navdata={this.props.navdata} />
+                    )}></Route>
+                    <Route path="/watch" render={props => (
+                        <SubNav {...props} navdata={this.props.navdata} />
+                    )}></Route>
+                    <Route path="/tv" render={props => (
+                        <SubNav {...props} navdata={this.props.navdata} />
+                    )}></Route>
+                    <Route path="/music" render={props => (
                         <SubNav {...props} navdata={this.props.navdata} />
                     )}></Route>
                 </SubNavContent>
